@@ -1,4 +1,4 @@
-package pixLab.classes;
+package classes;
 
 public class IntArrayWorkerTester
 {
