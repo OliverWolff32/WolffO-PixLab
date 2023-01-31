@@ -87,6 +87,19 @@ public class Picture extends SimplePicture
     
   }
   
+  /** Method to negate all pixels in a picture **/
+  public void negate() {
+      Pixel[][] pixels = this.getPixels2D();
+      for (Pixel[] rowArray : pixels) {
+          for (Pixel pixelObj : rowArray) {
+              pixelObj.setRed(255-pixelObj.getRed());
+              pixelObj.setGreen(255-pixelObj.getGreen());
+              pixelObj.setBlue(255-pixelObj.getBlue());
+          }
+      }
+  }
+  
+  
   /** Method to set the blue to 0 */
   public void zeroBlue()
   {
@@ -96,6 +109,20 @@ public class Picture extends SimplePicture
       for (Pixel pixelObj : rowArray)
       {
         pixelObj.setBlue(0);
+      }
+    }
+  }
+  
+  /** Method to set the red & green to 0 */
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
       }
     }
   }
