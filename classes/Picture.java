@@ -146,22 +146,45 @@ public class Picture extends SimplePicture
     }
     
     /** Method to mirror horizontally **/
-    public void mirrorHorizontally() {
+    public void mirrorHorizontal() {
         Pixel[][] pixels = this.getPixels2D();
         Pixel topPixel = null;
         Pixel bottomPixel = null;
-        int width = pixels[0].length;
-        for (int row = 0; row < pixels.length / 2; row++)
-        {
-            for (int col = 0; col < pixels[0].length; col++)
-            {
+        int height = pixels.length;
+        for (int row = 0; row < pixels.length; row++) {
+            for(int col = 0; col < pixels[0].length; col++) {
                 topPixel = pixels[row][col];
-                bottomPixel = pixels[row][width - 1 - col];
-                bottomPixel.setColor(topPixel.getColor());
+                bottomPixel = pixels[height-1-row][col];
+                bottomPixel.setColor(topPixel.getColor());                
             }
         }
     }
-
+    
+    /**Method to mirror horizontally bottom to top **/
+    public void mirrorHorizontalBotToTop() {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel topPixel = null;
+        Pixel bottomPixel = null;
+        int height = pixels.length;
+        for (int row = 0; row < pixels.length; row++) {
+            for(int col = 0; col < pixels[0].length; col++) {
+                topPixel = pixels[row][col];
+                bottomPixel = pixels[height-1-row][col];
+                topPixel.setColor(bottomPixel.getColor());                
+            }
+        }
+    }
+    
+    /** Method to mirror diagonally across the square line from
+     *  top left to bottom right. Top right of the square becomes 
+     *  what the bottom left is. Leave all the extra picture 
+     *  on the right normal.
+     */
+    public void mirrorDiagonally() {
+        Pixel[][] pixels = this.getPixels2D();
+        
+    }
+    
     /** Method to set the blue to 0 */
     public void zeroBlue()
     {
