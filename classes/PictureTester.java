@@ -19,8 +19,6 @@ public class PictureTester
     beach.explore();
   }
   
-  
-  
   public static void testFixUnderwater() {
       Picture water = new Picture("water.jpg");
       water.explore();

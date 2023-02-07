@@ -180,9 +180,27 @@ public class Picture extends SimplePicture
      *  what the bottom left is. Leave all the extra picture 
      *  on the right normal.
      */
-    public void mirrorDiagonally() {
+    public void mirrorDiagonal() {
         Pixel[][] pixels = this.getPixels2D();
+        Pixel topRight = null;
+        Pixel bottomLeft = null;
         
+        int height = pixels.length-1;
+        int width = pixels[0].length-1;
+        int squareWidth = height; 
+        
+        for(int row = 0; row < height; row++) {
+            for(int col = 0; col < squareWidth; col++) {
+                topRight = pixels[row][squareWidth-col];
+                bottomLeft = pixels[height-row][col];
+                
+                if(col>row) {
+                    
+                }
+                
+                
+            }
+        }
     }
     
     /** Method to set the blue to 0 */
