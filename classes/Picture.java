@@ -192,10 +192,10 @@ public class Picture extends SimplePicture
         for(int row = 0; row < height; row++) {
             for(int col = 0; col < squareWidth; col++) {
                 topRight = pixels[row][squareWidth-col];
-                bottomLeft = pixels[height-row][col];
+                bottomLeft = pixels[squareWidth-col][row];
                 
                 if(col>row) {
-                    
+                    topRight.setColor(bottomLeft.getColor());
                 }
                 
                 
